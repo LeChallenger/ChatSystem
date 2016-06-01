@@ -10,42 +10,31 @@ import Foundation
 
 class NetworkManager {
     
-
-
+    
+    let ws = WebSocket()
+    
+    func sendMessage(message:String = "Message is Empty") {
+        let msg = "\(message)"
+        self.ws.send(msg)
+        print("sent: \(msg)")
+    }
+    
+    func closeSocket() {
+        ws.event.close = { code, reason, clean in
+        }
+    }
     func openSocket(userName: String = "Unknown") {
         
         let request = NSMutableURLRequest(URL: NSURL(string:"wss://codingtest.meedoc.com/ws?username=\(userName)")!)
-        var messageNum = 0
-
-        let ws = WebSocket(request: request)
         
-        
-        let send : ()->() = {
-            let msg = "\( messageNum += 1): \(NSDate().description)"
-            print("send: \(msg)")
-            ws.send(msg)
-        }
-        ws.event.open = {
-            print("opened")
-            //send()
-        }
-        ws.event.close = { code, reason, clean in
-            print("close")
-        }
+        ws.open(request: request)
         ws.event.error = { error in
-            print("error \(error)")
+            fatalError("error: \(error)")
         }
         ws.event.message = { message in
             if let text = message as? String {
                 print("recv: \(text)")
-                if messageNum == 10 {
-                    ws.close()
-                } else {
-                    send()
-                }
             }
         }
-
     }
-    
 }
