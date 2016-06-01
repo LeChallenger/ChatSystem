@@ -7,13 +7,12 @@
 //
 
 import Foundation
-//import Starscream
-import SwiftWebSocket
 
-class NetworkManager { //WebSocketDelegate
+class NetworkManager {
     
 
-    func echoTest(){
+    
+    func openSocket() {
         var messageNum = 0
         let ws = WebSocket("wss://codingtest.meedoc.com/ws")
         let send : ()->() = {
@@ -41,37 +40,7 @@ class NetworkManager { //WebSocketDelegate
                 }
             }
         }
-    }
-    
-    func openSocket() {
-        
-        
-        
-//        print("openSocket fired!")
-//
-//        let socket = WebSocket(url: NSURL(string: "wss://codingtest.meedoc.com:80/ws")!)
-//        //"ws://localhost:9998/echo"
-//        socket.headers["username"] = "meedoc"
-//        socket.delegate = self
-////        socket.selfSignedSSL = true
-//        socket.connect()
-//        print(socket.isConnected)
-    }
 
-//    func websocketDidConnect(socket: WebSocket) {
-//        print("websocket is connected")
-//    }
-//    
-//    func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
-//        print("websocket is disconnected: \(error?.localizedDescription)")
-//    }
-//    
-//    func websocketDidReceiveMessage(socket: WebSocket, text: String) {
-//        print("got some text: \(text)")
-//    }
-//    
-//    func websocketDidReceiveData(socket: WebSocket, data: NSData) {
-//        print("got some data: \(data.length)")
-//    }
+    }
     
 }
