@@ -12,19 +12,22 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBAction func signInButtonAction(sender: AnyObject) {
-    }
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
         
-        let nm = NetworkManager()
-        nm.openSocket()
 
-
-
+        
+        if ((usernameTextField.text?.isEmpty) != nil) {
+            let nm = NetworkManager()
+            nm.openSocket(usernameTextField.text!)
+        }else{
+            
+        }
+        
+        
     }
+    
+    
+    
+
 
   
 

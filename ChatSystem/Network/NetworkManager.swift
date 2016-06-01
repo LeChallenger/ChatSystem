@@ -11,12 +11,17 @@ import Foundation
 class NetworkManager {
     
 
-    
-    func openSocket() {
+
+    func openSocket(userName: String = "Unknown") {
+        
+        let request = NSMutableURLRequest(URL: NSURL(string:"wss://codingtest.meedoc.com/ws?username=\(userName)")!)
         var messageNum = 0
-        let ws = WebSocket("wss://codingtest.meedoc.com/ws")
+
+        let ws = WebSocket(request: request)
+        
+        
         let send : ()->() = {
-            let msg = "\(++messageNum): \(NSDate().description)"
+            let msg = "\( messageNum += 1): \(NSDate().description)"
             print("send: \(msg)")
             ws.send(msg)
         }
