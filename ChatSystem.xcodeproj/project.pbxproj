@@ -12,6 +12,8 @@
 		AA218D391CFED89900F0B3D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA218D381CFED89900F0B3D5 /* Assets.xcassets */; };
 		AA218D3C1CFED89900F0B3D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA218D3A1CFED89900F0B3D5 /* LaunchScreen.storyboard */; };
 		AA218D441CFED8FE00F0B3D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA218D431CFED8FE00F0B3D5 /* Main.storyboard */; };
+		AA218D4A1CFEDA2100F0B3D5 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA218D491CFEDA2100F0B3D5 /* WebSocket.swift */; };
+		AA218D4C1CFEDAB100F0B3D5 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA218D4B1CFEDAB100F0B3D5 /* libz.1.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		AA218D3B1CFED89900F0B3D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA218D3D1CFED89900F0B3D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA218D431CFED8FE00F0B3D5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AA218D491CFEDA2100F0B3D5 /* WebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
+		AA218D4B1CFEDAB100F0B3D5 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = /usr/lib/libz.1.dylib; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA218D4C1CFEDAB100F0B3D5 /* libz.1.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +59,7 @@
 		AA218D301CFED89900F0B3D5 /* ChatSystem */ = {
 			isa = PBXGroup;
 			children = (
+				AA218D451CFED97600F0B3D5 /* Frameworks */,
 				AA218D311CFED89900F0B3D5 /* AppDelegate.swift */,
 				AA218D331CFED89900F0B3D5 /* ViewController.swift */,
 				AA218D431CFED8FE00F0B3D5 /* Main.storyboard */,
@@ -62,6 +68,31 @@
 				AA218D3D1CFED89900F0B3D5 /* Info.plist */,
 			);
 			path = ChatSystem;
+			sourceTree = "<group>";
+		};
+		AA218D451CFED97600F0B3D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA218D4D1CFEDAC600F0B3D5 /* Libraries */,
+				AA218D461CFED97F00F0B3D5 /* SwiftWebSocket */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA218D461CFED97F00F0B3D5 /* SwiftWebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				AA218D491CFEDA2100F0B3D5 /* WebSocket.swift */,
+			);
+			name = SwiftWebSocket;
+			sourceTree = "<group>";
+		};
+		AA218D4D1CFEDAC600F0B3D5 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				AA218D4B1CFEDAB100F0B3D5 /* libz.1.dylib */,
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA218D341CFED89900F0B3D5 /* ViewController.swift in Sources */,
+				AA218D4A1CFEDA2100F0B3D5 /* WebSocket.swift in Sources */,
 				AA218D321CFED89900F0B3D5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
