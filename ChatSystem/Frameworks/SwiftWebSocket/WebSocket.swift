@@ -109,7 +109,7 @@ public struct WebSocketEvents {
     public var message : (data : Any)->() = {(data) in}
     /// An event to be called when a pong is received from the server.
     public var pong : (data : Any)->() = {(data) in}
-    /// An event to be called when the WebSocket process has ended; this event is guarenteed to be called once and can be used as an alternative to the "close" or "error" events.
+    /// An event to be called when the WebSocket process has ended; this event is guaranteed to be called once and can be used as an alternative to the "close" or "error" events.
     public var end : (code : Int, reason : String, wasClean : Bool, error : ErrorType?)->() = {(code, reason, wasClean, error) in}
 }
 
@@ -505,7 +505,7 @@ private class Deflater {
     optional func webSocketMessageData(data: NSData)
     /// A function to be called when a pong is received from the server.
     optional func webSocketPong()
-    /// A function to be called when the WebSocket process has ended; this event is guarenteed to be called once and can be used as an alternative to the "close" or "error" events.
+    /// A function to be called when the WebSocket process has ended; this event is guaranteed to be called once and can be used as an alternative to the "close" or "error" events.
     optional func webSocketEnd(code: Int, reason: String, wasClean: Bool, error: NSError?)
 }
 
